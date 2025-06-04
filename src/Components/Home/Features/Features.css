@@ -1,0 +1,123 @@
+.features {
+  color: #2c1c11;
+  background-color: #f8f0e9;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.features-title {
+  font-family: "Amatic SC", cursive;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.features-description {
+  font-size: 16px;
+}
+
+.feature-card {
+  background-color: #ffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 40px;
+  background-color: #f17c13;
+  transition: height 0.3s ease;
+}
+
+.feature-card:hover::before {
+  height: 60px;
+}
+
+.feature-icon {
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, #f17c13, transparent 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  font-size: 24px;
+  color: #f17c13;
+}
+
+.feature-chapters {
+  margin-top: 50px;
+  background-color: #ffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.chapter-item {
+  text-align: left;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: color-mix(in srgb, #fbf7f3, transparent 5%);
+  border: 1px solid color-mix(in srgb, #2c1c11, transparent 90%);
+}
+
+.chapters-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #5c4b36;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.chapters-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #f17c13;
+}
+
+.chapter-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f17c13;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.chapter-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5c4b36;
+  margin-bottom: 10px;
+}
+
+.chapter-text {
+  font-size: 14px;
+  color: #2c1c11;
+  margin-bottom: 0;
+}

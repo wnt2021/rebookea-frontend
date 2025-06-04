@@ -1,0 +1,19 @@
+.thankYou {
+  overflow: hidden;
+  background-color: #f8f0e9;
+}
+
+.heightContainer {
+  height: 90vh !important;
+}
+
+.check {
+  font-size: 100px;
+  color: #5c4b36;
+}
+
+.thankyoutext {
+  font-size: 40px;
+  color: #5c4b36;
+  font-weight: 700;
+}

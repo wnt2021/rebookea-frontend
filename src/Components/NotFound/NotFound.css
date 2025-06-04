@@ -1,0 +1,19 @@
+.custom-bg {
+  background-color: #f8f0e9;
+}
+
+.btn-notFound {
+  color: #fff;
+  background: #f17c13;
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 50px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-notFound:hover {
+  color: #ffffff;
+  background: color-mix(in srgb, #f17c13, transparent 15%);
+}

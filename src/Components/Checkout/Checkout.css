@@ -1,0 +1,49 @@
+.checkout-section {
+  background-color: #f8f0e9;
+}
+
+.shopping-cart {
+  border-radius: 15px;
+}
+
+.bookTxt {
+  color: #f17c13;
+}
+
+.bg-price {
+  background-color: #f17c13;
+}
+
+.input-checkout {
+  width: 100%;
+  height: 50px;
+  padding: 0 0 0 40px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input-checkout:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #f17c13;
+  background-color: transparent;
+}
+
+.btn-checkout-bg {
+  height: 40px;
+  border: 0;
+  background: #f17c13;
+  border-radius: 10px;
+  outline: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 8px 26px;
+}
+
+.return {
+  color: #5c4b36 !important;
+}

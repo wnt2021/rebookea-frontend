@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+.hero {
+  width: 100%;
+  min-height: 60vh;
+  position: relative;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  color: #212529;
+  background-color: #fbf7f3;
+  padding: 60px 0;
+  scroll-margin-top: 92px;
+  overflow: clip;
+}
+
+.hero-title {
+  font-family: "Amatic SC", cursive;
+  font-size: 64px !important;
+}
+
+.btn-started {
+  color: #ffff;
+  background: #f17c13;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 12px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.btn-started:hover {
+  color: #ffffff;
+  background: color-mix(in srgb, #f17c13, transparent 15%);
+}
+
+.book-cover {
+  position: relative;
+  transform: rotate(-3deg);
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.book-img {
+  vertical-align: middle;
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+.book-shadow {
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+  width: 80%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  filter: blur(15px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
