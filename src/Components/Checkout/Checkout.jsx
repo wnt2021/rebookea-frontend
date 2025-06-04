@@ -26,7 +26,7 @@ function Checkout() {
   const checkoutDone = async () => {
     try {
       const res = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/bought/${id}`
+        `${import.meta.env.VITE_API_URL}/api/bought/${id}`
       );
       if (res.data.success) {
         setLoading(true);
@@ -44,7 +44,7 @@ function Checkout() {
   const boughtEmail = async (title, price, image) => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/bought-email`,
+        `${import.meta.env.VITE_API_URL}/api/bought-email`,
         {
           title,
           price,

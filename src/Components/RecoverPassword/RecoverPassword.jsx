@@ -22,13 +22,13 @@ function RecoverPassword() {
     const userId = localStorage.getItem("userId");
     try {
       const res = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/reset/${userId}`,
+        `${import.meta.env.VITE_API_URL}/api/reset/${userId}`,
         data
       );
       if (res.data.success) {
         setLoading(true);
         setTimeout(() => {
-          window.location.href = `${process.env.REACT_APP_API_URL}/login`;
+          window.location.href = `${import.meta.env.VITE_API_URL}/login`;
         }, 2000);
       }
     } catch (error) {

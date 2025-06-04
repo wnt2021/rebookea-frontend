@@ -22,7 +22,7 @@ function Buy() {
     const listBooks = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/books`
+          `${import.meta.env.VITE_API_URL}/api/books`
         );
         if (res.data.success) {
           setBooks(res.data.books);
@@ -39,7 +39,7 @@ function Buy() {
     const listRecentBooks = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/recent`
+          `${import.meta.env.VITE_API_URL}/api/recent`
         );
         if (res.data.success) {
           setRecentBooks(res.data.books);
@@ -209,7 +209,9 @@ function Buy() {
                       userId={e.userId}
                       title={e.title}
                       description={e.description}
-                      image={`${process.env.REACT_APP_API_URL}/uploads/${e.image}`}
+                      image={`${import.meta.env.VITE_API_URL}/uploads/${
+                        e.image
+                      }`}
                       price={e.price.toFixed(2)}
                       category={e.category}
                       icon="fa-comment"
@@ -231,7 +233,7 @@ function Buy() {
                     userId={e.userId}
                     title={e.title}
                     description={e.description}
-                    image={`${process.env.REACT_APP_API_URL}/uploads/${e.image}`}
+                    image={`${import.meta.env.VITE_API_URL}/uploads/${e.image}`}
                     price={e.price.toFixed(2)}
                     category={e.category}
                     isFavorited={e.favorites.includes(currentUserId)}

@@ -23,7 +23,7 @@ function Register() {
   const registerUser = async (data) => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/register`,
+        `${import.meta.env.VITE_API_URL}/api/register`,
         data,
         {
           withCredentials: true,
@@ -51,7 +51,7 @@ function Register() {
   const welcomeEmail = async (name) => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/welcome`,
+        `${import.meta.env.VITE_API_URL}/api/welcome`,
         {
           name,
         }

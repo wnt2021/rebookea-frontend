@@ -20,7 +20,7 @@ function ForgotPassword() {
   const recoverPassword = async (data) => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/recover`,
+        `${import.meta.env.VITE_API_URL}/api/recover`,
         data,
         {
           withCredentials: true,
@@ -44,7 +44,7 @@ function ForgotPassword() {
   const recoverEmail = async (name) => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/forgot`,
+        `${import.meta.env.VITE_API_URL}/api/forgot`,
         {
           name,
         }

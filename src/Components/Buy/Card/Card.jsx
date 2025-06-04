@@ -21,7 +21,7 @@ function Card({
   const toggleFavorite = async () => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/favorites/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/favorites/${id}`,
         { idUser }
       );
 

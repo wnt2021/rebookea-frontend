@@ -35,7 +35,7 @@ function Dashboard() {
   const deleteBook = async (id) => {
     try {
       const res = await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/delete/${id}`
+        `${import.meta.env.VITE_API_URL}/api/delete/${id}`
       );
       if (res.data.success) {
         setLoading(true);
@@ -55,7 +55,7 @@ function Dashboard() {
 
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/books-user/${userId}`
+          `${import.meta.env.VITE_API_URL}/api/books-user/${userId}`
         );
         if (res.data.success) {
           setBooks(res.data.books);
@@ -74,7 +74,7 @@ function Dashboard() {
 
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/list/${userId}`
+          `${import.meta.env.VITE_API_URL}/api/list/${userId}`
         );
         setFavorites(res.data.book);
       } catch (error) {
@@ -114,7 +114,7 @@ function Dashboard() {
 
     try {
       const res = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/update/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/update/${id}`,
         formData
       );
       if (res.data.success) {
@@ -264,7 +264,9 @@ function Dashboard() {
                       userId={e.userId}
                       title={e.title}
                       description={e.description}
-                      image={`${process.env.REACT_APP_API_URL}/uploads/${e.image}`}
+                      image={`${import.meta.env.VITE_API_URL}/uploads/${
+                        e.image
+                      }`}
                       price={e.price.toFixed(2)}
                       category={e.category}
                       isFavorited={e.favorites.includes(currentUserId)}
@@ -295,7 +297,9 @@ function Dashboard() {
                       <div className="book-image">
                         <img
                           className="img-fluid"
-                          src={`${process.env.REACT_APP_API_URL}/uploads/${e.image}`}
+                          src={`${import.meta.env.VITE_API_URL}/uploads/${
+                            e.image
+                          }`}
                           alt={e.title}
                         />
                         <div className="category">
