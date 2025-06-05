@@ -33,8 +33,7 @@ function Checkout() {
         boughtEmail(title, price, image);
         setTimeout(() => {
           navigate("/thanks");
-          window.location.reload();
-        }, 2000);
+        }, 1000);
       }
     } catch (error) {
       console.error("Ocurrio un error", error);

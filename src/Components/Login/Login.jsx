@@ -36,7 +36,6 @@ function Login() {
         localStorage.setItem("userId", res.data.user._id);
         setToken(res.data.user._id);
         setLoading(true);
-        console.log(res.data);
         setTimeout(() => {
           navigate("/");
         }, 1000);

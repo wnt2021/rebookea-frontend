@@ -52,7 +52,7 @@ function Sell() {
       if (res.data.success) {
         setLoading(true);
         setTimeout(() => {
-          window.location.reload();
+          navigate("/wall");
         }, 2000);
       }
     } catch (error) {

@@ -28,7 +28,7 @@ function RecoverPassword() {
       if (res.data.success) {
         setLoading(true);
         setTimeout(() => {
-          window.location.href = `${import.meta.env.VITE_API_URL}/login`;
+          navigate("/login");
         }, 2000);
       }
     } catch (error) {

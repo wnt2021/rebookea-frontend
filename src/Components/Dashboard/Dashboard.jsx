@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading.jsx";
 import Card from "../Buy/Card/Card.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const [books, setBooks] = useState([]);
@@ -41,7 +42,7 @@ function Dashboard() {
         setLoading(true);
 
         setTimeout(() => {
-          window.location.reload();
+          navigate("/dashboard");
         }, 2000);
       }
     } catch (error) {
@@ -119,9 +120,7 @@ function Dashboard() {
       );
       if (res.data.success) {
         setLoading(true);
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
+        setTimeout(() => {}, 2000);
       }
     } catch (error) {
       console.error("Error al actualizar libro", error);
