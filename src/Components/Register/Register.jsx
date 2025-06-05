@@ -37,6 +37,7 @@ function Register() {
         welcomeEmail(res.data.user.name);
         localStorage.setItem("userId", res.data.user._id);
         setToken(res.data.user._id);
+        console.log(res.data);
         setTimeout(() => {
           navigate("/");
         }, 1000);
