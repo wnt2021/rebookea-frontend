@@ -14,6 +14,7 @@ function Dashboard() {
   const [selectValue, setSelectValue] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const currentUserId = localStorage.getItem("userId");
   const [dataToUpdate, setDataToUpdate] = useState({
     id: "",

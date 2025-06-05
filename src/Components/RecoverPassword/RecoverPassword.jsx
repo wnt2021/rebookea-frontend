@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function RecoverPassword() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const {

@@ -6,10 +6,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import sellSchema from "../../Schemas/sellSchema.jsx";
 import axios from "axios";
 import Loading from "../Loading/Loading.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Sell() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleNextStep = async () => {
     let currentField = "";
