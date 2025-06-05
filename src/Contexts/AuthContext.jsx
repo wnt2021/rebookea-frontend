@@ -34,7 +34,6 @@ export const AuthProvider = ({ children }) => {
     deleteCookie("token");
     setToken(null);
     localStorage.removeItem("userId");
-    navigate("/login");
   };
 
   return (

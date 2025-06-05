@@ -158,10 +158,7 @@ function Navbar() {
                     removeCookie();
                   }}
                 >
-                  <Link
-                    to="/login"
-                    style={{ textDecoration: "none", color: "#000" }}
-                  >
+                  <Link style={{ textDecoration: "none", color: "#000" }}>
                     <Typography sx={{ textAlign: "center" }}>
                       Cerrar sesión
                     </Typography>
