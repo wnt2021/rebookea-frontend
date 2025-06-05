@@ -6,6 +6,7 @@ import registerSchema from "../../Schemas/registerSchema.jsx";
 import axios from "axios";
 import { useState } from "react";
 import Loading from "../Loading/Loading.jsx";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 function Register() {
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ function Register() {
     resolver: yupResolver(registerSchema),
   });
 
+  const { setToken } = useAuth();
+
   const registerUser = async (data) => {
     try {
       const res = await axios.post(
@@ -33,10 +36,10 @@ function Register() {
         setLoading(true);
         welcomeEmail(res.data.user.name);
         localStorage.setItem("userId", res.data.user._id);
+        setToken(res.data.user._id);
         setTimeout(() => {
           navigate("/");
-          window.location.reload();
-        }, 2000);
+        }, 1000);
       }
     } catch (error) {
       if (error.response && error.response.data.exists) {

@@ -6,6 +6,7 @@ import loginSchema from "../../Schemas/loginSchema.jsx";
 import axios from "axios";
 import { useState } from "react";
 import Loading from "../Loading/Loading.jsx";
+import { useAuth } from "../../Contexts/AuthContext.jsx";
 
 function Login() {
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ function Login() {
     resolver: yupResolver(loginSchema),
   });
 
+  const { setToken } = useAuth();
+
   const loginUser = async (data) => {
     try {
       const res = await axios.post(
@@ -31,11 +34,11 @@ function Login() {
       );
       if (res.data.success) {
         localStorage.setItem("userId", res.data.user._id);
+        setToken(res.data.user._id);
         setLoading(true);
         setTimeout(() => {
           navigate("/");
-          window.location.reload();
-        }, 2000);
+        }, 1000);
       }
     } catch (error) {
       if (error.response && error.response.data.exists) {
