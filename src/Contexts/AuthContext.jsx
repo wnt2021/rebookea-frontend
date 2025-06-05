@@ -8,35 +8,28 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const getCookie = (name) => {
-    const cookieValue = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith(name + "="))
-      ?.split("=")[1];
-
-    return cookieValue || null;
-  };
-
-  useEffect(() => {
-    const cookieToken = getCookie("token");
-    if (cookieToken) {
-      setToken(cookieToken);
-    }
-    setLoading(false);
-  }, []);
-
-  const deleteCookie = (name) => {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  const login = (token) => {
+    localStorage.setItem("userId", token);
+    setToken(token);
   };
 
   const removeCookie = () => {
-    deleteCookie("token");
     setToken(null);
     localStorage.removeItem("userId");
   };
 
+  useEffect(() => {
+    const storedToken = localStorage.getItem("userId");
+    if (storedToken) {
+      setToken(storedToken);
+    }
+    setLoading(false);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ token, setToken, removeCookie, loading }}>
+    <AuthContext.Provider
+      value={{ token, setToken, removeCookie, loading, login }}
+    >
       {children}
     </AuthContext.Provider>
   );

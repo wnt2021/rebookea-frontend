@@ -21,7 +21,7 @@ function Login() {
     resolver: yupResolver(loginSchema),
   });
 
-  const { setToken } = useAuth();
+  const { login } = useAuth();
 
   const loginUser = async (data) => {
     try {
@@ -34,7 +34,7 @@ function Login() {
       );
       if (res.data.success) {
         localStorage.setItem("userId", res.data.user._id);
-        setToken(res.data.user._id);
+        login(res.data.user._id);
         setLoading(true);
         setTimeout(() => {
           navigate("/");

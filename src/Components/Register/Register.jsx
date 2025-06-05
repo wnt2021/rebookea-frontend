@@ -21,7 +21,7 @@ function Register() {
     resolver: yupResolver(registerSchema),
   });
 
-  const { setToken } = useAuth();
+  const { login } = useAuth();
 
   const registerUser = async (data) => {
     try {
@@ -36,8 +36,7 @@ function Register() {
         setLoading(true);
         welcomeEmail(res.data.user.name);
         localStorage.setItem("userId", res.data.user._id);
-        setToken(res.data.user._id);
-        console.log(res.data);
+        login(res.data.user._id);
         setTimeout(() => {
           navigate("/");
         }, 1000);
