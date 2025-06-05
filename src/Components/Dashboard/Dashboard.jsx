@@ -43,7 +43,8 @@ function Dashboard() {
         setLoading(true);
 
         setTimeout(() => {
-          navigate("/dashboard");
+          setBooks();
+          setLoading(false);
         }, 2000);
       }
     } catch (error) {
@@ -121,7 +122,10 @@ function Dashboard() {
       );
       if (res.data.success) {
         setLoading(true);
-        setTimeout(() => {}, 2000);
+        setTimeout(() => {
+          setBooks();
+          setLoading(false);
+        }, 2000);
       }
     } catch (error) {
       console.error("Error al actualizar libro", error);
