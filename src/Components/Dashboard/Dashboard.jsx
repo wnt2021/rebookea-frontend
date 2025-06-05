@@ -43,9 +43,9 @@ function Dashboard() {
         setLoading(true);
 
         setTimeout(() => {
-          setBooks();
+          setBooks((prevBooks) => prevBooks.filter((book) => book._id !== id));
           setLoading(false);
-        }, 2000);
+        }, 1000);
       }
     } catch (error) {
       console.error("Error al eliminar libro", error);
@@ -123,9 +123,8 @@ function Dashboard() {
       if (res.data.success) {
         setLoading(true);
         setTimeout(() => {
-          setBooks();
-          setLoading(false);
-        }, 2000);
+          navigate(0);
+        }, 1000);
       }
     } catch (error) {
       console.error("Error al actualizar libro", error);
