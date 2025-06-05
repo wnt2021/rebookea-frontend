@@ -159,7 +159,7 @@ function Navbar() {
                   }}
                 >
                   <Link
-                    to="/login"
+                    to="/"
                     style={{ textDecoration: "none", color: "#000" }}
                   >
                     <Typography sx={{ textAlign: "center" }}>
