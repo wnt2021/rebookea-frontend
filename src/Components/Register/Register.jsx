@@ -6,7 +6,7 @@ import registerSchema from "../../Schemas/registerSchema.jsx";
 import axios from "axios";
 import { useState } from "react";
 import Loading from "../Loading/Loading.jsx";
-import { useAuth } from "../../context/AuthContext.jsx";
+import { useAuth } from "../../Contexts/AuthContext.jsx";
 
 function Register() {
   const navigate = useNavigate();
