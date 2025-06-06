@@ -209,9 +209,7 @@ function Buy() {
                       userId={e.userId}
                       title={e.title}
                       description={e.description}
-                      image={`${import.meta.env.VITE_API_URL}/uploads/${
-                        e.image
-                      }`}
+                      image={e.image}
                       price={e.price.toFixed(2)}
                       category={e.category}
                       icon="fa-comment"
@@ -233,7 +231,7 @@ function Buy() {
                     userId={e.userId}
                     title={e.title}
                     description={e.description}
-                    image={`${import.meta.env.VITE_API_URL}/uploads/${e.image}`}
+                    image={e.image}
                     price={e.price.toFixed(2)}
                     category={e.category}
                     isFavorited={e.favorites.includes(currentUserId)}
