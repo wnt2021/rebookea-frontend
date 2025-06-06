@@ -267,9 +267,7 @@ function Dashboard() {
                       userId={e.userId}
                       title={e.title}
                       description={e.description}
-                      image={`${import.meta.env.VITE_API_URL}/uploads/${
-                        e.image
-                      }`}
+                      image={e.image}
                       price={e.price.toFixed(2)}
                       category={e.category}
                       isFavorited={e.favorites.includes(currentUserId)}
@@ -300,9 +298,7 @@ function Dashboard() {
                       <div className="book-image">
                         <img
                           className="img-fluid"
-                          src={`${import.meta.env.VITE_API_URL}/uploads/${
-                            e.image
-                          }`}
+                          src={e.image}
                           alt={e.title}
                         />
                         <div className="category">
