@@ -149,7 +149,7 @@ function Register() {
                     <span>Or</span>
                     <hr className="line" />
                   </div>
-                  <Link to="" className="sign-in_apl" title="Register">
+                  <Link to="/login" className="sign-in_apl" title="Register">
                     <i className="fa-solid fa-right-to-bracket"></i>
                     <span>Inicia sesión</span>
                   </Link>
